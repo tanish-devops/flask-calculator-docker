@@ -12,4 +12,8 @@ Containerized Flask web application using Docker. This simple calculator support
 - Container networking basics
 - Running Flask inside Docker
 
+**To run**
+
+- docker build -t tanishrai01/calc .
+-docker run -p 8000:5000 tanishrai01/calc
 
