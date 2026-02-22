@@ -5,7 +5,7 @@ FROM python:3.12
 WORKDIR /calc
 
 #copy
-    COPY . /calc
+COPY . /calc
 
 #run
 RUN pip install -r requirements.txt
@@ -15,3 +15,4 @@ EXPOSE 5000
 
 #command
 CMD ["python","./app.py"]
+
