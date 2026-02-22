@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Web Calculator</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            padding-top: 50px;
+        }
+
+        .calc-card {
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 2px 2px 10px #eee;
+        }
+
+        input,
+        select,
+        button {
+            margin: 10px 0;
+            display: block;
+            width: 100%;
+            padding: 8px;
+        }
+
+        .result {
+            color: green;
+            font-weight: bold;
+        }
+
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="calc-card">
+        <h2>Localhost Calculator</h2>
+        <form method="POST">
+            <input type="number" step="any" name="num1" placeholder="First Number" required>
+            <select name="operation">
+                <option value="+">+</option>
+                <option value="-">-</option>
+                <option value="*">*</option>
+                <option value="/">/</option>
+            </select>
+            <input type="number" step="any" name="num2" placeholder="Second Number" required>
+            <button type="submit">Calculate</button>
+        </form>
+
+        {% if result is not none %}
+        <p class="result">Result: {{ result }}</p>
+        {% endif %}
+        {% if error %}
+        <p class="error">{{ error }}</p>
+        {% endif %}
+    </div>
+</body>
+
+</html>
